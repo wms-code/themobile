@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2014 at 07:51 AM
+-- Generation Time: May 11, 2014 at 09:24 AM
 -- Server version: 5.6.11
 -- PHP Version: 5.5.1
 
@@ -45,11 +45,11 @@ CREATE TABLE IF NOT EXISTS `admins` (
 CREATE TABLE IF NOT EXISTS `customers` (
   `customer_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_name` varchar(25) NOT NULL,
-  `cutomer_phone` varchar(12) NOT NULL,
+  `customer_phone` varchar(12) NOT NULL,
   `customer_address` varchar(100) DEFAULT NULL,
   `update_ts` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`customer_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

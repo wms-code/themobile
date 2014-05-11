@@ -43,4 +43,3 @@
               <!-- page end-->
           </section>
       </section>
-      <script src="js/form-component.js"></script>
