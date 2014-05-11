@@ -264,7 +264,7 @@
                             <li><a href="<?php echo base_url(); ?>#"><i class=" icon-suitcase"></i>Profile</a></li>
                             <li><a href="<?php echo base_url(); ?>#"><i class="icon-cog"></i> Settings</a></li>
                             <li><a href="<?php echo base_url(); ?>#"><i class="icon-bell-alt"></i> Notification</a></li>
-                            <li><a href="<?php echo base_url(); ?>login.html"><i class="icon-key"></i> Log Out</a></li>
+                            <li><a href="<?php echo base_url(); ?>admin/login/logout  "><i class="icon-key"></i> Log Out</a></li>
                         </ul>
                     </li>
                     <!-- user login dropdown end -->
@@ -284,7 +284,18 @@
                           <span>Dashboard</span>
                       </a>
                   </li>
-
+                  <li>
+                      <a  href="<?php echo base_url(); ?>admin/login">
+                          <i class="icon-user"></i>
+                          <span>Login Page</span>
+                      </a>
+                  </li>
+                    <li>
+                      <a href="<?php echo base_url(); ?>admin/home/addcust">
+                          <i class="icon-sitemap"></i>
+                          <span>Add new customer </span>
+                      </a>
+                  </li>
                   <li class="sub-menu">
                       <a href="<?php echo base_url(); ?>javascript:;" >
                           <i class="icon-laptop"></i>

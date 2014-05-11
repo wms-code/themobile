@@ -15,11 +15,19 @@ class Home extends MY_Controller {
         $this->template->set('title', 'Admin dashboard');
         $this->template->load('layouts/admin', 'admin/home');
     }
-
-    public function logout()
+    
+    public function addcust()
     {
-    	//$this->session->sess_destroy();
-    	echo "hi";
+        $this->template->set('title','Add Customer ');
+        $this->template->load('layouts/admin','admin/addcust');
+    }
+
+    public function addcustver()
+    {
+        $c_name     = $this->input->post('cutomer_name');
+        $c_phone    = $this->input->post('customer_phone');
+        $c_address  = $this->input->post('cutomer_address');
+        echo $c_name . $c_phone . $c_address;
     }
 }
 

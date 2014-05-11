@@ -20,13 +20,13 @@ class Login extends CI_Controller {
 		$user_pass = $this->input->post("upass");
 		if($user_name && $user_pass)
 		{
-			$this->db->where('admin_user',$user_name);
+			$this->db->where('admin_username',$user_name);
 			$res = $this->db->get('admins');
 			if ($res->num_rows() > 0)
 			{
 			   foreach ($res->result() as $row)
 			   {
-			      if($row->admin_user==$user_name && $row->admin_pass == $user_pass)
+			      if($row->admin_username==$user_name && $row->admin_password == $user_pass)
 			      {
 			      	$newdata = array(
                    'userid'  => $row->admin_id,
@@ -42,7 +42,7 @@ class Login extends CI_Controller {
 			}
 			else
 			{
-				echo "invaild username or password !  <b> Back</b>";
+				echo "no rec";
 			}
 		}
 		else
@@ -55,8 +55,8 @@ class Login extends CI_Controller {
 	public function logout()
 	{
 		$this->session->sess_destroy();
-		$target = base_url(). "admin/login";
-		header("Location: ".$target);
+		$target = base_url() . 'admin/login';
+		header("Location:".$target);
 	}
 
 }
