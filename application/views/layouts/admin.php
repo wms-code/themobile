@@ -296,6 +296,12 @@
                           <span>Add new customer </span>
                       </a>
                   </li>
+                    <li>
+                      <a href="<?php echo base_url(); ?>admin/home/addservice">
+                          <i class="icon-sitemap"></i>
+                          <span>Add new service </span>
+                      </a>
+                  </li>                  
                   <li class="sub-menu">
                       <a href="<?php echo base_url(); ?>javascript:;" >
                           <i class="icon-laptop"></i>

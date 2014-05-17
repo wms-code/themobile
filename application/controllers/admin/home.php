@@ -37,6 +37,12 @@ class Home extends MY_Controller {
 
     }
 
+    public function addservice()
+    {
+        $this->template->set('title','Add Service ');
+        $this->template->load('layouts/admin','admin/addservice');
+    }
+
 
     function inscust($c_name,$c_phone,$c_address)
     {
