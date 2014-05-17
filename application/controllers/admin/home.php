@@ -43,6 +43,19 @@ class Home extends MY_Controller {
         $this->template->load('layouts/admin','admin/addservice');
     }
 
+    public function addservicever()
+    {
+        $arr[] = $this->input->post('sno');
+        $arr[] = $this->input->post('brand');
+        $arr[] = $this->input->post('model');
+        $arr[] = $this->input->post('imei');
+        $arr[] = $this->input->post('complaint');
+        $arr[] = $this->input->post('amount');
+
+        print_r($arr);
+
+    }
+
 
     function inscust($c_name,$c_phone,$c_address)
     {
