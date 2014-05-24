@@ -11,9 +11,15 @@
                           <form action="<?php echo base_url() ?>admin/home/addservicever" method="post" class="form-horizontal">
                               <div class="form-group">
                                   <label class="col-sm-2 col-sm-2 control-label">Customer Name</label>
-                                  <div class="col-sm-10">
-                                      <input type="text" name="customer_name" class="form-control">
-                                  </div>
+                                  
+                                  <select class="col-sm-10 form-control m-bot10" name="customer_name">
+                                  <?php foreach ($cust->result_array() as $value) { ?>
+                                  
+                                              <option value="<?php echo $value['customer_id'] ?>" ><?php echo $value['customer_name'] ?></option>
+
+                                  <?php } ?>
+
+                                  </select>
                                 </div>
                                 <div class="col-lg-1">
                                     <label class="col-sm-2 control-label">S.No</label>                             
@@ -42,7 +48,13 @@
                                       <input type="text" name="sno[]" placeholder="" class="form-control">
                               </div>
                               <div class="col-lg-2">
-                                  <input type="text" name="brand[]" class="form-control">
+                                  <select name="brand[]" class="form-control"> 
+                                    <option>Sony</option>
+                                    <option>Samsung</option>
+                                    <option>Motorola</option>
+                                    <option>Nokia</option>
+                                    <option>LG</option>
+                                  </select>
                               </div>
                               <div class="col-lg-2">
                                   <input type="text" name="model[]" class="form-control">

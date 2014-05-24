@@ -39,8 +39,10 @@ class Home extends MY_Controller {
 
     public function addservice()
     {
+        $data['cust'] = $this->db->query('select customer_id,customer_name from customers');
+
         $this->template->set('title','Add Service ');
-        $this->template->load('layouts/admin','admin/addservice');
+        $this->template->load('layouts/admin','admin/addservice',$data);
     }
 
     public function addservicever()
@@ -52,7 +54,14 @@ class Home extends MY_Controller {
         $arr[] = $this->input->post('complaint');
         $arr[] = $this->input->post('amount');
 
-        print_r($arr);
+        for($i=0; $i<count($arr[0]); $i++)
+        {
+            for($j=0; $j<count($arr); $j++)
+            {
+                $newarr[$i][$j] = $arr[$j][$i];
+            }
+        }
+        print_r($newarr);
 
     }
 
