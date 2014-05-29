@@ -53,16 +53,30 @@ class Home extends MY_Controller {
         $arr[] = $this->input->post('imei');
         $arr[] = $this->input->post('complaint');
         $arr[] = $this->input->post('amount');
+        $customer_id = $this->input->post('customer_name');
+
+        $this->db->set('customer_id',$customer_id);
+        $this->db->insert('customer_invoice');
+        $invoice_no = $this->db->insert_id();
 
         for($i=0; $i<count($arr[0]); $i++)
         {
+            $newarr[$i][0] = $invoice_no;
             for($j=0; $j<count($arr); $j++)
             {
-                $newarr[$i][$j] = $arr[$j][$i];
+                $newarr[$i][$j+1] = $arr[$j][$i];
             }
         }
-        print_r($newarr);
 
+
+        $keys = array("invoice_id","sno","brand","model","imei","complaint","amount");
+        for($i=0; $i<count($arr[0]); $i++)
+        {
+            $ins_arr = array_combine($keys, $newarr[$i]);
+            $this->db->insert('invoice',$ins_arr);
+        }
+
+        echo "record inserted successfully";
     }
 
 
